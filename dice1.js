@@ -29,19 +29,37 @@ document.querySelector(".btn-roll").addEventListener("click", function() {
     document.getElementById("current-" + activePlayer).textContent = roundScore;
 
   }
+  // 1 buuh uyd 
   else{
-    document.getElementById("current-" + activePlayer).textContent = 0;
+    switchSide();
+    roundScore = 0;
+  }
+});
+// hold tovchiig ajiluulah
+// hold tovchiig darhad current dr bgaa onoog deesh nemeh
+document.querySelector(".btn-hold").addEventListener("click", function(){
+  scores[activePlayer] = scores[activePlayer] + roundScore;
+  document.getElementById("score-" + activePlayer).textContent = scores[activePlayer];
+  if(scores[activePlayer] > 20){
+    document.getElementById("name-" + activePlayer).textContent = "Winner";
+    
+  }
+  // roundScore 0 boloh
+  roundScore = 0; 
+  diceDom.style.display = "none";
+  switchSide();
+  
+})
+function switchSide(){
+  document.getElementById("current-" + activePlayer).textContent = 0;
     if(activePlayer ===0){
       activePlayer = 1;
     }
     else{
       activePlayer = 0;
     }
-    document.querySelector(".player-0-panel").classList.remove("active");
-    document.querySelector(".player-1-panel").classList.add("active");
-    
-    
-    // 1 buuh uyd 
-  }
-  // tglogchiin eeljiig solih
-});
+    document.querySelector(".player-0-panel").classList.toggle("active");
+    document.querySelector(".player-1-panel").classList.toggle("active");
+
+}
+
