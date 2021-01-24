@@ -10,11 +10,13 @@ var roundScore = 0;
 // Шооны аль талаараа буусныг хадгалах хувьсагч хэрэгтэй, 1-6 гэсэн утгыг энэ хувьсагчид санамсаргүйгээр үүсгэж өгнө.
 
 // Програм эхлэхэд бэлтгэе
+starting();
+function starting() {
 document.getElementById("score-0").textContent = "0";
 document.getElementById("score-1").textContent = "0";
 document.getElementById("current-0").textContent = "0";
 document.getElementById("current-1").textContent = "0";
-
+}
 var diceDom = document.querySelector(".dice");
 diceDom.style.display = "none";
 
@@ -91,10 +93,13 @@ function switchToNextPlayer() {
 }
 // Tgloomig shineer ehluuhleh buyu New Game tovch dr darhad tgloom shineer ehlene.
 document.querySelector(".btn-new").addEventListener("click", function(){
-  document.querySelector(".player-score").textContent = "0";
-  document.querySelector(".player-current-score").textContent = "0";  
+ starting();
+diceDom.style.display = "none";
   roundScore = 0;
   scores = [0, 0];
+  if (scores[activePlayer] >= 20) {
+    document.querySelector(".player-name").
+  }
 
 })
 
