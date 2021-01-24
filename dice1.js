@@ -57,7 +57,7 @@ document.querySelector(".btn-hold").addEventListener("click", function() {
     scores[activePlayer];
 
   // Уг тоглогч хожсон эсэхийг (оноо нь 100-с их эсэх) шалгах
-  if (scores[activePlayer] >= 10) {
+  if (scores[activePlayer] >= 20) {
     // Ялагч гэсэн текстийг нэрнийх нь оронд гаргана
     document.getElementById("name-" + activePlayer).textContent = "WINNER!!!";
     document
@@ -87,4 +87,14 @@ function switchToNextPlayer() {
 
   // Шоог түр алга болгоно.
   diceDom.style.display = "none";
+  
 }
+// Tgloomig shineer ehluuhleh buyu New Game tovch dr darhad tgloom shineer ehlene.
+document.querySelector(".btn-new").addEventListener("click", function(){
+  document.querySelector(".player-score").textContent = "0";
+  document.querySelector(".player-current-score").textContent = "0";  
+  roundScore = 0;
+  scores = [0, 0];
+
+})
+
